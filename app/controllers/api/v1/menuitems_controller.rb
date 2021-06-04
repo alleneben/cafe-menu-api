@@ -1,10 +1,10 @@
 module Api
-    module v1
-        class MenuItemsController < ApplicationController
+    module V1
+        class MenuitemsController < ApplicationController
             def index
-                menuItems = MenuItem.find()
+                menuItems = MenuItem.all
 
-                return json: { status: 'success', message: 'Loaded menu items', data: menuItems}, status: ok
+                render json: { status: 'success', message: 'Loaded menu items', data: menuItems}, status: :ok
             end
         end
     end
